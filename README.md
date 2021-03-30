@@ -39,6 +39,7 @@ Here are the names of the columns and their meaning:
 'replay': Name of the replay file
 'date': Date  
 'duration [frames]': Length of the match in frames
+
 'p1': Name of player 1
 'p1_code': Code of player 1
 'p1_char': Character of player 1
