@@ -34,7 +34,6 @@ Be aware that games with less than 1800 frames (30 sec) and games not played in 
 It will generate a .csv in the same folder as the .py file named Slippi_stats.csv
 
 ```
-
 'date': date  
 'duration [frames]': duration of the match in frames
 'p1': name of player 1
@@ -76,7 +75,6 @@ It will generate a .csv in the same folder as the .py file named Slippi_stats.cs
 'stage': stage,
 'winner': Who won
 'stock_dif': Stock difference at the end of the match
-
 ```
 
 
