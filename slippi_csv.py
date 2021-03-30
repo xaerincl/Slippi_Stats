@@ -8,6 +8,7 @@ import argparse
 """
 TO DO:
 
+CACHE: listado de partidas analizadas, para no analizar doble ?
 Daño por laser
 Laser tirados
 
@@ -21,10 +22,6 @@ def is_offstage(position,stage):
 					'YOSHIS_STORY': 58.907
 					}
 
-
-	#print(f'stage {stage}  and x_position of player {position}')
-	#print(f'limits of the current stage {stage}')
-	#print(stage_limits[stage])
 	x_pos = float(position.split(',')[0][1:])
 	if abs(x_pos) > float(stage_limits[stage]):
 		return 1
@@ -100,17 +97,8 @@ def search_kills(frames, stage):
 		p1_offstage += is_offstage(str(j.ports[0].leader.post.position), stage)
 		p2_offstage += is_offstage(str(j.ports[1].leader.post.position), stage)
 
-
-
-
 	end_percent_1 = frames[-1].ports[0].leader.post.damage
 	end_percent_2 = frames[-1].ports[1].leader.post.damage
-
-	#print(f'Porcentaje muerte p1: {death_percent_p1}')
-	#print(f'Porcentaje muerte p2: {death_percent_p2}')
-
-	#print(f'Porcentaje final p1: {end_percent_1}')
-	#print(f'Porcentaje final p2: {end_percent_2}')
 
 	total_damage_dealt_p1 = 0
 	total_damage_dealt_p2 = 0
@@ -128,20 +116,13 @@ def search_kills(frames, stage):
 	if None in death_percent_p2:
 		total_damage_dealt_p1 += end_percent_2
 
-
-	#print(f'Daño total hecho por p1: {total_damage_dealt_p1}')
-	#print(f'Daño total hecho por p2: {total_damage_dealt_p2}')
-
-	#print(f'frames en el escudo: {p1_shield}')
-	#print(f'frames en el escudo: {p2_shield}')
-
-
-
 	return death_percent_p1, death_percent_p2, kill_move_p1, kill_move_p2, int(total_damage_dealt_p1), int(total_damage_dealt_p2), p1_shield, p2_shield, p1_offstage, p2_offstage
 
 
 
 def main(folder):
+
+	valid_stages = ['BATTLEFIELD','FINAL_DESTINATION','DREAM_LAND_N64', 'POKEMON_STADIUM', 'FOUNTAIN_OF_DREAMS', 'YOSHIS_STORY']
 
 	files = os.listdir(folder)
 
@@ -151,17 +132,26 @@ def main(folder):
 	for file in files:
 
 		slippi_file = os.path.join(folder,file)
-		replay = Game(slippi_file)
+		try:
+			replay = Game(slippi_file)
+			print(f'Game {file}')
+			print('='*25)
+		except:
+			print(f'Something happened, skipping game {file}','\n')
+			continue
 
-		#print(dir(replay))
-		#print(replay.frames[-1])
+		stage = str(replay.start.stage).split('.')[1]
+
+		if stage not in valid_stages:
+			# Only valid stages
+			continue
 
 		if replay.start.is_teams:
-			# only count singles 1v1
+			# Only count singles 1v1
 			continue 
 
 		if replay.metadata.duration <= 1800:
-			# filter games with less than 1800 frames (30 sec)
+			# Filter games with less than 1800 frames (30 sec)
 			continue
 
 		duration = int(replay.metadata.duration)
@@ -185,53 +175,51 @@ def main(folder):
 
 		vict_player = winner(stocks_1, stocks_2, percent_1, percent_2, code_1, code_2)
 
-		stage = str(replay.start.stage).split('.')[1]
-
 		stock_dif = abs(int(stocks_1)-int(stocks_2))
 
 		death_percent_p1, death_percent_p2, kill_move_p1, kill_move_p2, total_damage_dealt_p1, total_damage_dealt_p2, p1_shield, p2_shield, p1_offstage, p2_offstage = search_kills(replay.frames, stage)
 
 		match_dict = {'date': date,  
 					'duration [frames]': duration,
-					'player_1': player_1, 
-					'code_1': code_1, 
-					'character_1': character_1, 
-					'player_2': player_2, 
-					'code_2': code_2, 
-					'character_2': character_2, 
+					'p1': player_1, 
+					'p1_code': code_1, 
+					'p1_char': character_1, 
+					'p2': player_2, 
+					'p2_code': code_2, 
+					'p2_char': character_2, 
 
-					'death%_stock1_player1' : death_percent_p1[0],
-					'death%_stock2_player1' : death_percent_p1[1],
-					'death%_stock3_player1' : death_percent_p1[2],
-					'death%_stock4_player1' : death_percent_p1[3],
+					'p1_stock1_death%' : death_percent_p1[0],
+					'p1_stock2_death%' : death_percent_p1[1],
+					'p1_stock3_death%' : death_percent_p1[2],
+					'p1_stock4_death%' : death_percent_p1[3],
 
-					'kill_move_1_player1' : kill_move_p1[0],
-					'kill_move_2_player1' : kill_move_p1[1],
-					'kill_move_3_player1' : kill_move_p1[2],
-					'kill_move_4_player1' : kill_move_p1[3],
+					'p1_stock1_killmove' : kill_move_p1[0],
+					'p1_stock2_killmove' : kill_move_p1[1],
+					'p1_stock3_killmove' : kill_move_p1[2],
+					'p1_stock4_killmove' : kill_move_p1[3],
 
-					'death%_stock1_player2' : death_percent_p2[0],
-					'death%_stock2_player2' : death_percent_p2[1],
-					'death%_stock3_player2' : death_percent_p2[2],
-					'death%_stock4_player2' : death_percent_p2[3],
+					'p2_stock1_death%' : death_percent_p2[0],
+					'p2_stock2_death%' : death_percent_p2[1],
+					'p2_stock3_death%' : death_percent_p2[2],
+					'p2_stock4_death%' : death_percent_p2[3],
 
-					'kill_move_1_player2' : kill_move_p2[0],
-					'kill_move_2_player2' : kill_move_p2[1],
-					'kill_move_3_player2' : kill_move_p2[2],
-					'kill_move_4_player2' : kill_move_p2[3],
+					'p2_stock1_killmove' : kill_move_p2[0],
+					'p2_stock2_killmove' : kill_move_p2[1],
+					'p2_stock3_killmove' : kill_move_p2[2],
+					'p2_stock4_killmove' : kill_move_p2[3],
 
-					'total_damage_dealt_by_p1': total_damage_dealt_p1,
-					'total_damage_dealt_by_p2': total_damage_dealt_p2,
+					'p1_damage_dealt': total_damage_dealt_p1,
+					'p2_damage_dealt': total_damage_dealt_p2,
 
-					'frames_shield_p1': p1_shield,
-					'frames_shield_p2': p2_shield,
+					'p1_frames_shield': p1_shield,
+					'p2_frames_shield': p2_shield,
 
-					'frames_offstage_p1': p1_offstage,
-					'frames_offstage_p2': p2_offstage,
+					'p1_frames_offstage': p1_offstage,
+					'p2_frames_offstage': p2_offstage,
 
 					'stage': stage, 'winner': vict_player, 'stock_dif': stock_dif}
 
-		print(match_dict)
+		print(match_dict,'\n')
 		data.append(match_dict)
 
 
