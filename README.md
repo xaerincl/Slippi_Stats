@@ -37,5 +37,4 @@ It will generate a .csv in the same folder as the .py file named Slippi_stats.cs
 # Thanks to
 
 
-https://slippi.gg/
-[https://slippi.gg/](asdf)
+[Slippi](https://slippi.gg/)
