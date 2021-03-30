@@ -36,6 +36,7 @@ It will generate a .csv in the same folder as the .py file named Slippi_stats.cs
 Here are the names of the columns and their meaning:
 
 ```
+'replay': Name of the replay file
 'date': date  
 'duration [frames]': duration of the match in frames
 'p1': name of player 1
