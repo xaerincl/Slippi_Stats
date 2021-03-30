@@ -92,3 +92,8 @@ Here are the names of the columns and their meaning:
 - [The Slippi Team](https://slippi.gg/)
 - [hohav](https://github.com/hohav/py-slippi)
 - [kyle-swygert](https://github.com/kyle-swygert/slippi-file-rename)
+
+
+# Soon
+
+Tool to analyze matchups
