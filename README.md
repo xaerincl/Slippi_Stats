@@ -1,7 +1,7 @@
 # Slippi_Stats
 ![https://github.com/kyle-swygert/slippi-file-rename/blob/391be3491fa179f2da384255efcadcc75e7398c9/slippi-logo.png](https://github.com/kyle-swygert/slippi-file-rename/blob/391be3491fa179f2da384255efcadcc75e7398c9/slippi-logo.png)
 
-Python script to generate basic stats of Slippi replays. Check [Output](https://github.com/xaerincl/Slippi_Stats/blob/main/README.md#output)
+Python script to generate basic stats of Slippi replays for Smash Bros Melee. Check [Output](https://github.com/xaerincl/Slippi_Stats/blob/main/README.md#output) to see all the info available atm.
 
 # Installation
 Requires Python >= 3.7. 
