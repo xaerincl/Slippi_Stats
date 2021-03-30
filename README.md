@@ -36,46 +36,46 @@ It will generate a .csv in the same folder as the .py file named Slippi_stats.cs
 ```
 
 'date': date  
-'duration [frames]': duration
-'p1': player_1 
-'p1_code': code_1
-'p1_char': character_1
-'p2': player_2
-'p2_code': code_2
-'p2_char': character_2
+'duration [frames]': duration of the match in frames
+'p1': name of player 1
+'p1_code': code of player 1
+'p1_char': character of player 1
+'p2': name of player 2
+'p2_code': code of player 2
+'p2_char': character of player 2
 
-'p1_stock1_death%' : death_percent_p1[0]
-'p1_stock2_death%' : death_percent_p1[1]
-'p1_stock3_death%' : death_percent_p1[2]
-'p1_stock4_death%' : death_percent_p1[3]
+'p1_stock1_death%' : Percentage player 1 had before losing the first stock
+'p1_stock2_death%' : Percentage player 1 had before losing the second stock
+'p1_stock3_death%' : Percentage player 1 had before losing the third stock
+'p1_stock4_death%' : Percentage player 1 had before losing the last stock
 
-'p1_stock1_killmove' : kill_move_p1[0]
-'p1_stock2_killmove' : kill_move_p1[1]
-'p1_stock3_killmove' : kill_move_p1[2]
-'p1_stock4_killmove' : kill_move_p1[3]
+'p1_stock1_killmove' : Move used by player 1 to finish the first stock of player 2
+'p1_stock2_killmove' : Move used by player 1 to finish the second stock of player 2
+'p1_stock3_killmove' : Move used by player 1 to finish the third stock of player 2
+'p1_stock4_killmove' : Move used by player 1 to finish the last stock of player 2
 
-'p2_stock1_death%' : death_percent_p2[0]
-'p2_stock2_death%' : death_percent_p2[1]
-'p2_stock3_death%' : death_percent_p2[2]
-'p2_stock4_death%' : death_percent_p2[3]
+'p2_stock1_death%' : Percentage player 2 had before losing the first stock
+'p2_stock2_death%' : Percentage player 2 had before losing the first stock
+'p2_stock3_death%' : Percentage player 2 had before losing the first stock
+'p2_stock4_death%' : Percentage player 2 had before losing the first stock
 
-'p2_stock1_killmove' : kill_move_p2[0]
-'p2_stock2_killmove' : kill_move_p2[1]
-'p2_stock3_killmove' : kill_move_p2[2]
-'p2_stock4_killmove' : kill_move_p2[3]
+'p2_stock1_killmove' : Move used by player 2 to finish the first stock of player 1
+'p2_stock2_killmove' : Move used by player 2 to finish the first stock of player 1
+'p2_stock3_killmove' : Move used by player 2 to finish the first stock of player 1
+'p2_stock4_killmove' : Move used by player 2 to finish the first stock of player 1
 
-'p1_damage_dealt': total_damage_dealt_p1
-'p2_damage_dealt': total_damage_dealt_p2
+'p1_damage_dealt': Total damage dealt by player 1 to player 2
+'p2_damage_dealt': Total damage dealt by player 2 to player 1
 
-'p1_frames_shield': p1_shield
-'p2_frames_shield': p2_shield
+'p1_frames_shield': Amount of frames in shiled by player 1
+'p2_frames_shield': Amount of frames in shiled by player 2
 
-'p1_frames_offstage': p1_offstage
-'p2_frames_offstage': p2_offstage
+'p1_frames_offstage': Amount of frames offstage by player 1
+'p2_frames_offstage': Amount of frames offstage by player 2
 
 'stage': stage,
-'winner': vict_player
-'stock_dif': stock_dif
+'winner': Who won
+'stock_dif': Stock difference at the end of the match
 
 ```
 
