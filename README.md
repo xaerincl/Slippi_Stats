@@ -4,7 +4,7 @@
 # Installation
 Requires Python >= 3.7. 
 
-It needs both py-slippi and pandas, install:
+It needs both py-slippi and pandas, to install:
 
 ```
 $ pip install py-slippi
