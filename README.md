@@ -70,8 +70,8 @@ Here are the names of the columns and their meaning:
 'p1_damage_dealt': Total damage dealt by player 1 to player 2
 'p2_damage_dealt': Total damage dealt by player 2 to player 1
 
-'p1_frames_shield': Amount of frames in shiled by player 1
-'p2_frames_shield': Amount of frames in shiled by player 2
+'p1_frames_shield': Amount of frames in shield by player 1
+'p2_frames_shield': Amount of frames in shield by player 2
 
 'p1_frames_offstage': Amount of frames offstage by player 1
 'p2_frames_offstage': Amount of frames offstage by player 2
