@@ -24,7 +24,8 @@ It can be a relative path or full path. For example if you place the .py file in
 $ python slippi_csv.py -folder Slippi
 ```
 
-Be aware that games with less than 1800 frames (30 sec) will not be included in the csv. If you want a different threshold, edit line 168. Only 
+Be aware that games with less than 1800 frames (30 sec) and games not played in tournament legal stages will not be included in the csv. Edit line 148 and line 175 if you want to change that.
+
 
 
 
