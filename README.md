@@ -37,6 +37,6 @@ It will generate a .csv in the same folder as the .py file named Slippi_stats.cs
 # Thanks to
 
 
-[The Slippi Team](https://slippi.gg/)
-[hohav](https://github.com/hohav/py-slippi)
-[kyle-swygert](https://github.com/kyle-swygert/slippi-file-rename)
+- [The Slippi Team](https://slippi.gg/)
+- [hohav](https://github.com/hohav/py-slippi)
+- [kyle-swygert](https://github.com/kyle-swygert/slippi-file-rename)
