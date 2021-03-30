@@ -27,7 +27,7 @@ $ python slippi_csv.py -folder Slippi
 Be aware that games with less than 1800 frames (30 sec) and games not played in tournament legal stages will not be included in the csv. Edit line 125 and line 153 if you want to change that.
 
 
-
+On a decent computer it should take less than 1 second for each replay file. It took 1340 seconds to analyze 1900 replays in my setup.
 
 # Output
 
