@@ -37,14 +37,14 @@ Here are the names of the columns and their meaning:
 
 ```
 'replay': Name of the replay file
-'date': date  
-'duration [frames]': duration of the match in frames
-'p1': name of player 1
-'p1_code': code of player 1
-'p1_char': character of player 1
-'p2': name of player 2
-'p2_code': code of player 2
-'p2_char': character of player 2
+'date': Date  
+'duration [frames]': Length of the match in frames
+'p1': Name of player 1
+'p1_code': Code of player 1
+'p1_char': Character of player 1
+'p2': Name of player 2
+'p2_code': Code of player 2
+'p2_char': Character of player 2
 
 'p1_stock1_death%' : Percentage player 1 had before losing the first stock
 'p1_stock2_death%' : Percentage player 1 had before losing the second stock
