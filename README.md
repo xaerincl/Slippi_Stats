@@ -75,7 +75,7 @@ Here are the names of the columns and their meaning:
 'p2_frames_offstage': Amount of frames offstage by player 2
 
 'stage': stage,
-'winner': Code of winner
+'winner': Code of winner player
 'stock_dif': Stock difference at the end of the match
 ```
 
