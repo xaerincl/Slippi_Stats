@@ -1,5 +1,5 @@
 # Slippi_Stats
-
+[https://github.com/kyle-swygert/slippi-file-rename/blob/391be3491fa179f2da384255efcadcc75e7398c9/slippi-logo.png](https://github.com/kyle-swygert/slippi-file-rename/blob/391be3491fa179f2da384255efcadcc75e7398c9/slippi-logo.png)
 
 # Installation
 Requires Python >= 3.7. 
@@ -23,6 +23,10 @@ It can be a relative path or full path. For example if you place the .py file in
 ```
 $ python slippi_csv.py -folder Slippi
 ```
+
+Be aware that games with less than 1800 frames (30 sec) will not be included in the csv. If you want a different threshold, edit line 168. Only 
+
+
 
 # Output
 
