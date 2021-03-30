@@ -180,7 +180,7 @@ def main(folder):
 		death_percent_p1, death_percent_p2, kill_move_p1, kill_move_p2, total_damage_dealt_p1, total_damage_dealt_p2, p1_shield, p2_shield, p1_offstage, p2_offstage = search_kills(replay.frames, stage)
 
 		match_dict = {
-					'Replay': file,
+					'replay': file,
 					'date': date,  
 					'duration [frames]': duration,
 					'p1': player_1, 
