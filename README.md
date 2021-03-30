@@ -33,6 +33,53 @@ Be aware that games with less than 1800 frames (30 sec) and games not played in 
 
 It will generate a .csv in the same folder as the .py file named Slippi_stats.csv
 
+```
+
+'date': date  
+'duration [frames]': duration
+'p1': player_1 
+'p1_code': code_1
+'p1_char': character_1
+'p2': player_2
+'p2_code': code_2
+'p2_char': character_2
+
+'p1_stock1_death%' : death_percent_p1[0]
+'p1_stock2_death%' : death_percent_p1[1]
+'p1_stock3_death%' : death_percent_p1[2]
+'p1_stock4_death%' : death_percent_p1[3]
+
+'p1_stock1_killmove' : kill_move_p1[0]
+'p1_stock2_killmove' : kill_move_p1[1]
+'p1_stock3_killmove' : kill_move_p1[2]
+'p1_stock4_killmove' : kill_move_p1[3]
+
+'p2_stock1_death%' : death_percent_p2[0]
+'p2_stock2_death%' : death_percent_p2[1]
+'p2_stock3_death%' : death_percent_p2[2]
+'p2_stock4_death%' : death_percent_p2[3]
+
+'p2_stock1_killmove' : kill_move_p2[0]
+'p2_stock2_killmove' : kill_move_p2[1]
+'p2_stock3_killmove' : kill_move_p2[2]
+'p2_stock4_killmove' : kill_move_p2[3]
+
+'p1_damage_dealt': total_damage_dealt_p1
+'p2_damage_dealt': total_damage_dealt_p2
+
+'p1_frames_shield': p1_shield
+'p2_frames_shield': p2_shield
+
+'p1_frames_offstage': p1_offstage
+'p2_frames_offstage': p2_offstage
+
+'stage': stage,
+'winner': vict_player
+'stock_dif': stock_dif
+
+```
+
+
 
 # Thanks to
 
