@@ -31,7 +31,9 @@ Be aware that games with less than 1800 frames (30 sec) and games not played in 
 
 # Output
 
-It will generate a .csv in the same folder as the .py file named Slippi_stats.csv
+It will generate a .csv in the same folder as the .py file named Slippi_stats.csv.
+
+Here are the names of the columns and their meaning:
 
 ```
 'date': date  
