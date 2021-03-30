@@ -26,7 +26,8 @@ It can be a relative path or full path. For example if you place the .py file in
 $ python slippi_csv.py -folder Slippi
 ```
 
-Be aware that games with less than 1800 frames (30 sec) and games not played in tournament legal stages will not be included in the csv. Edit line 125 and line 153 if you want to change that.
+Be aware that games with less than 1800 frames (30 sec) and games not played in tournament legal stages will not be included in the csv. Edit line [125](https://github.com/xaerincl/Slippi_Stats/blob/d69fae5d3c525959eac05e41fa70d5a51d208514/slippi_csv.py#L125) and line [153](https://github.com/xaerincl/Slippi_Stats/blob/d69fae5d3c525959eac05e41fa70d5a51d208514/slippi_csv.py#L153) if you want to change that.
+
 
 
 On a decent computer it should take less than 1 second for each replay file. It took 1340 seconds to analyze 1900 replays in my setup.
