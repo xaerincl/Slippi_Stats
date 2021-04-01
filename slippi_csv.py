@@ -11,6 +11,7 @@ TO DO:
 CACHE: listado de partidas analizadas, para no analizar doble ?
 Daño por laser
 Laser tirados
+Max stats: inputear cuantos replays a analizar (full default)
 
 """
 def is_offstage(position,stage):
@@ -40,7 +41,7 @@ def winner(s1, s2, p1, p2, c1, c2):
 		return c2
 	else:
 		#return 'LRASTART or timeout'
-		if c1<c2:
+		if p1<p2:
 			return c1
 		else:
 			return c2
@@ -143,15 +144,15 @@ def main(folder):
 		stage = str(replay.start.stage).split('.')[1]
 
 		if stage not in valid_stages:
-			# Only valid stages
+			print('Not a valid stage, skipping game', '\n') # Only valid stages
 			continue
 
 		if replay.start.is_teams:
-			# Only count singles 1v1
+			print('Teams, skipping game', '\n' ) # Only count singles 1v1
 			continue 
 
 		if replay.metadata.duration <= 1800:
-			# Filter games with less than 1800 frames (30 sec)
+			print('Too short, skipping game', '\n') # Filter games with less than 1800 frames (30 sec)
 			continue
 
 		duration = int(replay.metadata.duration)
@@ -235,5 +236,8 @@ if __name__ == '__main__':
 
 	parser = argparse.ArgumentParser(description='''Slippi stats .csv''')
 	parser.add_argument('-folder', '-f',  type=str, required=True, help='Path to slippi .slp folder')
+	#parser.add_argument('-max', '-m',  type=int, default=-1, help='Max amount of files to analyze')
+	#parser.add_argument('-csv', '-c',  type=str, default='Slippi_stats.csv', help='Last .csv file generated')
+	#parser.add_argument('-output', '-o',  type=str, default='', help='Path and name of the .csv file to save')
 	args = parser.parse_args()
 	main(args.folder)
